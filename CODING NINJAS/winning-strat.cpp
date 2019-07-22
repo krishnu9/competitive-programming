@@ -1,0 +1,1 @@
+#include <bits/stdc++.h> using namespace std; void minimumBribes(vector<int> A) { int n = A.size(); int cnt = 0; for(int i = n - 1; i >= 0; i--) { if(A
