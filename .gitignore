@@ -20,3 +20,5 @@ list_stl
 array
 
 *.out
+
+*.code-workspace

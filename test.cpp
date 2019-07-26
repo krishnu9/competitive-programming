@@ -12,14 +12,10 @@ void func(float &x)
 int main()
 {
 
-  float A[] = {1, 3, 4, 5, 7, 8, 9, 4, 2, 1};
-  int size = 10;
-
-  for_each(A, A + size, func);
-
-  for (float x : A)
+  vector<pair<int, int>> A(25, {1, 3});
+  for (auto x : A)
   {
-    cout << x << ' ';
+    cout << x.first << ' ' << x.second << endl;
   }
 
   return 0;
