@@ -22,3 +22,5 @@ array
 *.out
 
 *.code-workspace
+
+core

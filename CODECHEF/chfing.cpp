@@ -17,14 +17,18 @@ int main()
         ulli n, k;
         cin >> n >> k;
 
-        ulli total = (k - 1) / (n - 1);
+        lli a = k - 1, d = n - 1;
+        lli t = a / d;
+        lli l = a - t * d;
+        t++;
 
-        ulli first = k - 1, last = first - (k - 1);
+        lli sum = a + l;
+        if (sum & 1)
+            t /= 2;
+        else
+            sum /= 2;
 
-        ulli terms = l / d + 1;
-
-        lli sum = (terms * ((2 * l % mod) - ((terms - 1) * d) % mod)) % mod;
-        sum = (sum * 500000004) % mod;
+        sum = ((sum % mod) * (t % mod)) % mod;
 
         cout << sum << endl;
     }
