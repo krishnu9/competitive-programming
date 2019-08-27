@@ -12,7 +12,7 @@ void printBFS(int **edges, int n, int sv) {
   while (!pendingVertices.empty()) {
     int currentVertex = pendingVertices.front();
     pendingVertices.pop();
-    cout << currentVertex << ' ';
+    std::cout << currentVertex << ' ';
     for (int i = 0; i < n; i++) {
       if (i == currentVertex)
         continue;
@@ -22,7 +22,7 @@ void printBFS(int **edges, int n, int sv) {
       }
     }
   }
-  cout << endl;
+  std::cout << endl;
   delete[] visited;
 }
 

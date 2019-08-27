@@ -11,6 +11,6 @@ int main()
 {
 	vector<int> a(15, 0);
 	for (int i = 0; i < a.size(); i++)
-		cout << a[i] << ' ';
+		cout << a[i] << ' '<< i;
 	return 0;
 }
