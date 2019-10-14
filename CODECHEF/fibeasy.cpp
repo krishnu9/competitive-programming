@@ -6,33 +6,24 @@ using namespace std;
 int main() {
   ios_base::sync_with_stdio(0);
 
-  vector<int> fib = {0, 1, 1};
-  for (int i = 0; i < 61; i++) {
-    fib.push_back((fib[i - 1] + fib[i - 2]) % 10);
-  }
+  int last_dig[65] = {0, 1, 2, 3, 0, 9, 2, 3, 0, 9, 2, 3, 0, 9, 2, 3, 0,
+                      9, 2, 3, 0, 9, 2, 3, 0, 9, 2, 3, 0, 9, 2, 3, 0, 9,
+                      2, 3, 0, 9, 2, 3, 0, 9, 2, 3, 0, 9, 2, 3, 0, 9, 2,
+                      3, 0, 9, 2, 3, 0, 9, 2, 3, 0, 9, 2, 3, 0};
 
-  ulli n = 2;
-  map<ulli, int> de;
-
-  while (log10(n) <= 18) {
-    int power2 = floor(log2(n));
-    ulli lowest2 = int(pow(2, power2));
-    int last_digit = fib[lowest2 % 60 - 1];
-    de.insert(pair<ulli, int>(n, last_digit));
-    n = n * 2;
-  }
-
-  int t;
+  ulli t;
   cin >> t;
 
-  ulli num;
-
   while (t--) {
-    cin >> num;
-    int power2 = floor(log2(num));
-    ulli lowest2 = int(pow(2, power2));
-    cout << de[lowest2] << endl;
+    ulli n;
+    cin >> n;
+    int msb = 0;
+    while (n != 0) {
+      n = n / 2;
+      msb++;
+      // cout << msb;
+    }
+    cout << last_dig[msb - 1] << ' ';
   }
-
   return 0;
 }
