@@ -6,7 +6,6 @@ using namespace std;
 int main() {
   ios_base::sync_with_stdio(0);
 
-  // int inarray[1000005] = {0};
   int indexof[1000005];
   for (int i = 0; i < 1000005; i++) indexof[i] = -1;
 
@@ -15,13 +14,14 @@ int main() {
   cin >> t;
   while (t--) {
     cin >> n;
-    int A[n];
+    int A[n], maxA;
 
     for (int i = 0; i < n; i++) {
       cin >> A[i];
       // inarray[A[i]] = 1;
       indexof[A[i]] = i;
-    }  // INPUT
+      maxA = max(A[i], maxA);
+    }
 
     int starValue[n] = {0};
 
