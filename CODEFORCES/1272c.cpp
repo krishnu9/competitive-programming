@@ -35,19 +35,22 @@ int main() {
     string::size_type loc = a.find(s[i], 0);
     if (loc == string::npos)
       s[i] = '0';
+    else
+      s[i] = '1';
   }
+
   int cnt = 0;
   ulli ans = 0;
 
-  rep(i, s.size()) {
-    if (s[i] != '0')
-      cnt++;
-    else {
-      ans += ((cnt % mod * (cnt % mod + 1)) % mod) / 2;
-      cnt = 0;
-    }
+  for (int i = 0; i < s.size(); ++i) {
+    int j = i;
+    while (j < n && s[j] == '1')
+      ++j;
+    ll len = j - i;
+
+    ans += len * (len + 1) / 2;
+    i = j;
   }
-  ans += ((cnt % mod * (cnt % mod + 1)) % mod) / 2;
 
   cout << ans << endl;
 

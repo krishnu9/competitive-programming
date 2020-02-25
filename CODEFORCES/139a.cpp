@@ -27,18 +27,22 @@ int main() {
   int n;
   cin >> n;
   int sum = 0;
-  int a[n];
-  rep(i, n) {
+  int a[7] = {0};
+  cin >> a[0];
+  for (int i = 1; i < 7; i++) {
     cin >> a[i];
     sum += a[i];
   }
 
-  int del = n % sum;
   int i = 0;
-  while (del > 0) {
-    del -= a[i++];
+  while (n > 0) {
+    int day = i % 7;
+    n -= a[day];
+    i++;
   }
-  cout << i;
+
+  int ans = (i % 7 == 0) ? 7 : (i % 7);
+  cout << ans << endl;
 
   return 0;
 }
