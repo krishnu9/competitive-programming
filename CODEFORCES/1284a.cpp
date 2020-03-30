@@ -1,3 +1,4 @@
+// https://codeforces.com/contest/1284/submission/68203276
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
@@ -19,9 +20,10 @@ int main() {
 
   int n, m;
   cin >> n >> m;
-  vector<string> s, t;
-  rep(i, n) { getline }
-  rep(i, m) { gets(t[i]); }
+  string s[n], t[m];
+
+  rep(i, n) cin >> s[i];
+  rep(i, m) cin >> t[i];
 
   int q;
   cin >> q;
@@ -30,8 +32,9 @@ int main() {
     int y;
     string ans = "";
     cin >> y;
-    ans += s[y % n - 1];
-    ans += t[y % m - 1];
+    y--;
+    ans += s[y % n];
+    ans += t[y % m];
     cout << ans << endl;
   }
 

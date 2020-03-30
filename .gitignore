@@ -1,28 +1,12 @@
-
-\.idea/
-
-\.vscode/
-
-edx/
-
-\.directory
-
+# c++
+*.obj
+*.gch
+*.a
 *.exe
-
-Untitled-1
-
-test
-
-power0f2
-
-list_stl
-
-array
-
 *.out
+*.app
+*.stackdump
 
-*.code-workspace
-
-core
-CODECHEF/zomcav
-CODECHEF/.fuse_hidden0000029900000001
+.vscode
+__pycache__
+bloomf.egg-info
